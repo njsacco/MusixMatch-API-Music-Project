@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>MusixMatchAPI Project</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="../static/img/favicon.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+          rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="../static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="../static/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+      Theme Name: Regna
+      Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+</head>
+
+<body>
+
+<!--==========================
+Header
+============================-->
+<header id="header">
+
+</header>
+
+
+<section id="hero">
+    <div class="hero-container">
+      <h1>Welcome to the MusixMatch API Music Web App</h1>
+        <h2>Discover new music and artists!</h2>
+
+        <div class="row" style="column-gap: 80px;">
+            <div class="column">
+                <h3>Top {{ quantity }} Artists </h3>
+                <h3> in {{ country }}:</h3>
+
+                {% for artist in list_of_artists %}
+                    <div class="artist">
+                        <p>{{ artist }}</p>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <div class="column">
+                <h3>Top {{ quantity }} Tracks </h3>
+                <h3> in {{ country }}:</h3>
+                <table class="styled-table">
+                    <tr>
+                        <th>Track Name</th>
+                        <th>Artist Name</th>
+                        <th>Lyrics</th>
+                    </tr>
+                    {% for track in list_of_tracks %}
+                        <tr>
+                            <td>{{ track[0] }}</td>
+                            <td>{{ track[1] }}</td>
+                            <td><a href="{{ track[2] }}">Lyrics</a></td>
+                        </tr>
+                    {% endfor %}
+
+
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <a class="btn-get-started" href={{ url_for('index') }}>Return</a>
+        </div>
+        <br>
+
+
+    </div>
+</section><!-- #hero -->
+
+
+<main id="main">
+
+
+</main>
+
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+        </div>
+        <div class="credits">
+
+            Designed by Professor Gregory Reis using <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</footer><!-- #footer -->
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="../static/lib/jquery/jquery.min.js"></script>
+<script src="../static/lib/jquery/jquery-migrate.min.js"></script>
+<script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../static/lib/easing/easing.min.js"></script>
+<script src="../static/lib/wow/wow.min.js"></script>
+<script src="../static/lib/waypoints/waypoints.min.js"></script>
+<script src="../static/lib/counterup/counterup.min.js"></script>
+<script src="../static/lib/superfish/hoverIntent.js"></script>
+<script src="../static/lib/superfish/superfish.min.js"></script>
+
+<!-- Contact Form JavaScript File -->
+<script src="../static/contactform/contactform.js"></script>
+
+<!-- Template Main Javascript File -->
+<script src="../static/js/main.js"></script>
+
+</body>
+</html>
